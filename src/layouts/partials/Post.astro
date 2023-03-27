@@ -3,8 +3,7 @@ import { Image } from "@astrojs/image/components";
 import config from "@config/config.json";
 import { plainify } from "@lib/utils/textConverter";
 
-const { post, index } = Astro.props;
-const { blog_folder, summary_length } = config.settings;
+const { folder, summaryLength, post, index } = Astro.props;
 ---
 
 <div class="post">
@@ -20,12 +19,12 @@ const { blog_folder, summary_length } = config.settings;
     )
   }
   <h2 class="h3 mb-2 mt-4">
-    <a href={`/${blog_folder}/${post.slug}`} class="block hover:text-primary">
+    <a href={`/${folder}/${post.slug}`} class="block hover:text-primary">
       {post.data.title}
     </a>
   </h2>
-  <p set:html={plainify(post.body.slice(0, summary_length))} />
-  <a class="btn btn-primary mt-4" href={`/${blog_folder}/${post.slug}`} rel="">
+  <p set:html={plainify(post.body.slice(0, summaryLength))} />
+  <a class="btn btn-primary mt-4" href={`/${folder}/${post.slug}`} rel="">
     Read More
   </a>
 </div>

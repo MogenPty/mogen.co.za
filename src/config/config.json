@@ -14,7 +14,11 @@
   "settings": {
     "pagination": 4,
     "summary_length": 200,
-    "blog_folder": "blog"
+    "blog_folder": "blog",
+    "services": {
+      "folder": "services",
+      "pagination": 5
+    }
   },
   "nav_button": {
     "enable": true,
