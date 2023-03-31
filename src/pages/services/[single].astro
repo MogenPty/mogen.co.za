@@ -1,12 +1,12 @@
 ---
 import Base from "@layouts/Base.astro";
 import PostSingle from "@layouts/PostSingle.astro";
+import Plan from "@layouts/partials/Plan.astro";
 import { getSinglePage } from "@lib/contentParser.astro";
-import config from '@config/config.json'
-
+import config from "@config/config.json";
 
 export async function getStaticPaths() {
-  const {folder} = config.settings.services;
+  const { folder } = config.settings.services;
   const posts = await getSinglePage(folder);
 
   const paths = posts.map((post) => ({
@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { title, meta_title, description, image } = post.data;
+const { title, meta_title, description, image, plans_title, plans } = post.data;
 ---
 
 <Base
@@ -29,4 +29,12 @@ const { title, meta_title, description, image } = post.data;
   image={image}
 >
   <PostSingle post={post} />
+  <section class="section -mt-20">
+    <div class="container">
+      <h2 class="text-center font-normal">{plans_title}</h2>
+      <div class="section row -mt-10 justify-center md:mt-0">
+        {plans?.map((plan: any) => <Plan plan={plan} />)}
+      </div>
+    </div>
+  </section>
 </Base>

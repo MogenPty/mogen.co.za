@@ -1,8 +1,9 @@
 ---
+index: 4
 title: "Business Documentation"
 description: "Heading example Here is example of hedings. You can use this heading by following markdownify rules."
 image: "/images/blog-4.jpg"
-date: 2022-07-04T05:00:00Z
+date: 2022-05-06T05:00:00Z
 draft: false
 content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat. consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat."
 images:
@@ -13,6 +14,7 @@ button:
   enable: true
   label: Check it out
   link: /services/business-documentation
+plans_title: Pricing
 plans:
   - title: Basic Plan
     subtitle: Best For Small Individuals

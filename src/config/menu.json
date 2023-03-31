@@ -9,20 +9,20 @@
       "url": "/services"
     },
     {
-      "name": "Blog",
-      "url": "/blog"
-    },
-    {
-      "name": "Contact",
-      "url": "/contact"
+      "name": "News",
+      "url": "/news"
     },
     {
       "name": "FAQ",
       "url": "/faq"
     },
     {
-      "name": "Elements",
-      "url": "/elements"
+      "name": "About",
+      "url": "/about"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
     }
   ],
   "footer": [
@@ -30,29 +30,29 @@
       "name": "Company",
       "menu": [
         {
-          "text": "Pricing",
-          "url": "/pricing"
+          "text": "About Us",
+          "url": "/about"
         },
         {
-          "text": "Quick Start",
-          "url": "#"
+          "text": "Contact Us",
+          "url": "/contact"
         }
       ]
     },
     {
-      "name": "Product",
+      "name": "Services",
       "menu": [
         {
-          "text": "Features",
+          "text": "Web App Development",
           "url": "#"
         },
         {
-          "text": "Platform",
+          "text": "Mobile App Development",
           "url": "#"
         },
         {
-          "text": "Pricing",
-          "url": "/pricing"
+          "text": "Business Documentation",
+          "url": "#"
         }
       ]
     },

@@ -45,14 +45,14 @@ const currentPosts = sortedPosts.slice(indexOfFirstPost, indexOfLastPost);
       <div class="row">
         {
           currentPosts.map((post) => (
-            <div class="col-12 mb-8 sm:col-6">
-              <Post post={post} />
+            <div class="col-12 sm:col-6 mb-8">
+              <Post post={post} folder={blog_folder} />
             </div>
           ))
         }
       </div>
       <Pagination
-        section={config.settings.blog_folder}
+        section={blog_folder}
         totalPages={totalPages}
         currentPage={currentPage}
       />

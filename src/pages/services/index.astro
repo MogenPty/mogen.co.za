@@ -4,6 +4,7 @@ import config from "@config/config.json";
 import Base from "@layouts/Base.astro";
 import Post from "@layouts/partials/Post.astro";
 import { getSinglePage } from "@lib/contentParser.astro";
+import { sortByDate } from "@lib/utils/sortFunctions";
 import { markdownify, plainify } from "@lib/utils/textConverter";
 import { getEntryBySlug } from "astro:content";
 
@@ -15,6 +16,7 @@ const serviceIndex = await getEntryBySlug<any, string>(
   "_index"
 );
 const currentServices = await getSinglePage(servicesFolder);
+const sortedServices = sortByDate(currentServices);
 ---
 
 <Base title={serviceIndex?.data.title}>
@@ -32,11 +34,11 @@ const currentServices = await getSinglePage(servicesFolder);
         <div class="row col-12 pb-24 pt-16">
           <div class="md:col-6">
             {
-              currentServices[0].data.image && (
+              sortedServices[0].data.image && (
                 <Image
                   class="rounded-lg"
-                  src={currentServices[0].data.image}
-                  alt={currentServices[0].data.title}
+                  src={sortedServices[0].data.image}
+                  alt={sortedServices[0].data.title}
                   width={925}
                   height={475}
                 />
@@ -46,20 +48,20 @@ const currentServices = await getSinglePage(servicesFolder);
           <div class="md:col-6">
             <h2 class="h3 mb-2 mt-4">
               <a
-                href={`/${servicesFolder}/${currentServices[0].slug}`}
+                href={`/${servicesFolder}/${sortedServices[0].slug}`}
                 class="block hover:text-primary"
               >
-                {currentServices[0].data.title}
+                {sortedServices[0].data.title}
               </a>
             </h2>
             <p
               set:html={plainify(
-                currentServices[0].body.slice(0, summary_length)
+                sortedServices[0].body.slice(0, summary_length)
               )}
             />
             <a
               class="btn btn-primary mt-4"
-              href={`/${servicesFolder}/${currentServices[0].slug}`}
+              href={`/${servicesFolder}/${sortedServices[0].slug}`}
               rel=""
             >
               Read More
@@ -67,7 +69,7 @@ const currentServices = await getSinglePage(servicesFolder);
           </div>
         </div>
         {
-          currentServices.slice(1).map((post) => (
+          sortedServices.slice(1).map((post) => (
             <div class="col-12 sm:col-6 lg:col-4 mb-8">
               <Post
                 post={post}
