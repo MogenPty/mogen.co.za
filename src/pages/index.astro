@@ -7,7 +7,6 @@ import { markdownify } from "@lib/utils/textConverter";
 import { getEntryBySlug } from "astro:content";
 import { getSinglePage } from "@lib/contentParser.astro";
 import config from "@config/config.json";
-import { log } from "astro/dist/core/logger/core";
 
 const homepage = await getEntryBySlug("homepage", "index");
 const { banner, feature, workflow, call_to_action } = homepage.data;
@@ -64,13 +63,6 @@ const services = await getSinglePage(folder);
           feature!.features.map((item, i) => (
             <div class="feature-card rounded-xl bg-white p-5 pb-8 text-center">
               {item.icon && (
-                // <Image
-                //   class="mx-auto"
-                //   src={item.icon}
-                //   width={30}
-                //   height={30}
-                //   alt=""
-                // />
                 <img
                   class="mx-auto"
                   alt={item.icon}

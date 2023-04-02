@@ -1,6 +1,5 @@
 ---
 index: 1
-# title: "What you need to know about Photography"
 title: "Website Development"
 description: "Heading example Here is example of hedings. You can use this heading by following markdownify rules."
 image: "/images/blog-1.jpg"

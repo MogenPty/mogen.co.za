@@ -83,6 +83,43 @@ const postsCollection = defineCollection({
   }),
 });
 
+// Services collection schema
+const service_page = defineCollection({
+  schema: z.object({
+    id: z.string().optional(),
+    index: z.number().optional(),
+    title: z.string(),
+    description: z.string().optional(),
+    date: z.date().optional(),
+    images: z.array(z.string()).optional(),
+    button: z
+      .object({
+        label: z.string(),
+        link: z.string().default("#"),
+        enable: z.boolean().default(true),
+      })
+      .optional(),
+    draft: z.boolean().optional(),
+    plans: z
+      .array(
+        z.object({
+          title: z.string(),
+          subtitle: z.string(),
+          price: z.number(),
+          recommended: z.boolean().optional(),
+          type: z.string(),
+          features: z.array(z.string()).optional(),
+          button: z.object({
+            label: z.string(),
+            link: z.string().default("#"),
+            enable: z.boolean().default(true),
+          }),
+        })
+      )
+      .optional(),
+  }),
+});
+
 // Author collection schema
 const authorsCollection = defineCollection({
   schema: z.object({
@@ -195,6 +232,7 @@ export interface PageData {
   pages: string;
   authors: string;
   contact: string;
+  services: string;
   faq: string;
   pricing: string;
 }
@@ -205,6 +243,7 @@ export const collections = {
   pages: pagesCollection,
   authors: authorsCollection,
   contact: contact_page,
+  services: service_page,
   faq: faq_page,
   pricing: pricing_page,
 };

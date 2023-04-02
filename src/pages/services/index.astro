@@ -1,12 +1,14 @@
 ---
-import { Image } from "@astrojs/image/components";
 import config from "@config/config.json";
 import Base from "@layouts/Base.astro";
-import Post from "@layouts/partials/Post.astro";
+import Service from "@layouts/partials/Service.astro";
 import { getSinglePage } from "@lib/contentParser.astro";
 import { sortByDate } from "@lib/utils/sortFunctions";
 import { markdownify, plainify } from "@lib/utils/textConverter";
 import { getEntryBySlug } from "astro:content";
+
+import { Image } from "@astrojs/image/components";
+import Cta from "@layouts/components/Cta.astro";
 
 const { services, summary_length } = config.settings;
 
@@ -30,56 +32,28 @@ const sortedServices = sortByDate(currentServices);
         class="text-center text-h3-sm font-normal"
         set:html={markdownify(serviceIndex?.data.description)}
       />
-      <div class="row pb-12">
-        <div class="row col-12 pb-24 pt-16">
-          <div class="md:col-6">
-            {
-              sortedServices[0].data.image && (
-                <Image
-                  class="rounded-lg"
-                  src={sortedServices[0].data.image}
-                  alt={sortedServices[0].data.title}
-                  width={925}
-                  height={475}
-                />
-              )
-            }
-          </div>
-          <div class="md:col-6">
-            <h2 class="h3 mb-2 mt-4">
-              <a
-                href={`/${servicesFolder}/${sortedServices[0].slug}`}
-                class="block hover:text-primary"
-              >
-                {sortedServices[0].data.title}
-              </a>
-            </h2>
-            <p
-              set:html={plainify(
-                sortedServices[0].body.slice(0, summary_length)
-              )}
-            />
-            <a
-              class="btn btn-primary mt-4"
-              href={`/${servicesFolder}/${sortedServices[0].slug}`}
-              rel=""
-            >
-              Read More
-            </a>
-          </div>
-        </div>
-        {
-          sortedServices.slice(1).map((post) => (
-            <div class="col-12 sm:col-6 lg:col-4 mb-8">
-              <Post
-                post={post}
-                folder={servicesFolder}
-                summaryLength={summary_length}
-              />
-            </div>
-          ))
-        }
-      </div>
     </div>
   </section>
+  {
+    sortedServices!.map((service, index: number) => {
+      const isOdd = index % 2 > 0;
+
+      return <Service service={service.data} isOdd={isOdd} />;
+    })
+  }
+
+  <script>
+    import Swiper, { Autoplay, Pagination } from "swiper";
+    new Swiper(".service-carousel .swiper", {
+      modules: [Pagination, Autoplay],
+      autoplay: {
+        delay: 3000,
+      },
+      pagination: {
+        type: "bullets",
+        el: ".service-carousel .pagination",
+        clickable: true,
+      },
+    });
+  </script>
 </Base>
