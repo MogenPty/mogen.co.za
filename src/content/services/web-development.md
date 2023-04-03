@@ -7,8 +7,8 @@ date: 2022-05-09T05:00:00Z
 draft: false
 content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat. consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat."
 images:
-  - "/images/service-slide-1.png"
-  - "/images/service-slide-2.png"
+  - "/images/web-development-1.png"
+  - "/images/web-development-2.png"
   - "/images/service-slide-3.png"
 button:
   enable: false

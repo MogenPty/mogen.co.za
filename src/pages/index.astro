@@ -7,12 +7,14 @@ import { markdownify } from "@lib/utils/textConverter";
 import { getEntryBySlug } from "astro:content";
 import { getSinglePage } from "@lib/contentParser.astro";
 import config from "@config/config.json";
+import { sortByDate } from "@lib/utils/sortFunctions";
 
 const homepage = await getEntryBySlug("homepage", "index");
 const { banner, feature, workflow, call_to_action } = homepage.data;
 
 const { folder } = config.settings.services;
-const services = await getSinglePage(folder);
+const currentServices = await getSinglePage(folder);
+const services = sortByDate(currentServices);
 ---
 
 <Base>
