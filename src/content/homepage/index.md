@@ -13,10 +13,10 @@ feature:
   title: What We Do Best
   features:
     - name: "Clean Code"
-      icon: "/images/code.svg"
-      content: "Readable, maintainable, and organized code"
-    - name: "Object Oriented"
       icon: "/images/oop.svg"
+      content: "Readable, maintainable, and organized code"
+    - name: "Object Oriented Programming"
+      icon: "/images/code.svg"
       content: "A programming paradigm using objects with data and behavior"
     - name: "7 days Service"
       icon: "/images/user-clock.svg"
