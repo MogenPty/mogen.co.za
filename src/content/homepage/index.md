@@ -10,7 +10,7 @@ banner:
 
 # feature
 feature:
-  title: Something You Need To Know
+  title: What We Do Best
   features:
     - name: "Clean Code"
       icon: "/images/code.svg"
