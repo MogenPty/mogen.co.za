@@ -1,7 +1,7 @@
 ---
 banner:
   title: Let us solve your critical website development challenges
-  content: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nihil enim maxime corporis cumque <br/> totam aliquid nam sint inventore optio modi neque laborum officiis necessitatibus
+  content: At Motsoane Global Enterprise, our mission is to provide top-notch professional services that meet the needs of our clients at an affordable price. We are committed to excellence, innovation, and exceeding expectations in everything we do. Our goal is to build long-lasting relationships with our clients by delivering unparalleled value and exceptional customer service. With a focus on integrity, transparency, and reliability, we aim to be the go-to partner for businesses and individuals seeking reliable and affordable professional services.
   image: /images/banner-art.png
   button:
     label: "Contact Us"
@@ -43,7 +43,7 @@ workflow:
 # call_to_action
 call_to_action:
   title: Ready to get started?
-  content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur.
+  content: Take your business to the next level with our transparent, reliable, and speedy web and mobile app development services. Contact us today!
   image: "/images/cta.png"
   button:
     enable: true
