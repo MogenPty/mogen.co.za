@@ -11,46 +11,48 @@ images:
   - "/images/web-development-2.png"
   - "/images/service-slide-3.png"
 button:
-  enable: false
+  enable: true
   label: Check it out
-  link: /contact
+  link: /services/web-development
 plans_title: Pricing
 plans:
-  - title: Basic Plan
-    subtitle: Best For Small Individuals
-    price: 49
-    type: month
+  - title: Starter Plan
+    subtitle: Best For Small Projects
+    price: 2499
+    type: once-off
     features:
-      - Express Service
-      - Customs Clearance
-      - Time-Critical Services
-    button:
-      label: Get started for free
-      link: "/contact"
-
-  - title: Professional Plan
-    subtitle: Best For Professionals
-    price: 69
-    type: month
-    recommended: true
-    features:
-      - Express Service
-      - Customs Clearance
-      - Time-Critical Services
-      - Cloud Service
-      - Best Dashboard
+      - Up to 5 Pages Static
+      - Pre-Designed Template
+      - No Hosting (No Emails / No Domain)
     button:
       label: Get started
       link: "/contact"
 
   - title: Business Plan
-    subtitle: Best For Large Individuals
-    price: 99
+    subtitle: Best For Mid-Size Projects
+    price: 300
+    type: month
+    recommended: true
+    features:
+      - Dynamic Content using CRM
+      - Blog Posts
+      - Custom Web Template
+      - Speed Optimization (SEO)
+      - 10/5 Customer Support
+    button:
+      label: Get started
+      link: "/contact"
+
+  - title: Premium Plan
+    subtitle: Best For Large Projects
+    price: 499
     type: month
     features:
-      - Express Service
-      - Customs Clearance
-      - Time-Critical Services
+      - Dynamic Content using CRM
+      - Blog Posts
+      - Custom Web Template
+      - Speed Optimization (SEO)
+      - 18/7 Customer Support
     button:
       label: Get started
       link: "/contact"
