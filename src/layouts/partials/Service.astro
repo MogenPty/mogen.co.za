@@ -44,8 +44,8 @@ console.log("service => ", service);
       <div class={`service-content mt-5 md:mt-0 ${!isOdd && "md:order-1"}`}>
         <h2 class="font-bold leading-[40px]">{service?.title}</h2>
         {
-          service?.description && (
-            <p class="mt-4 mb-2">{service?.description}</p>
+          service?.intro && (
+            <p class="mt-4 mb-2">{service?.intro}</p>
           )
         }
         {

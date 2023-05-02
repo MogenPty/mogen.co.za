@@ -90,6 +90,7 @@ const service_page = defineCollection({
     index: z.number().optional(),
     title: z.string(),
     description: z.string().optional(),
+    intro: z.string().optional(),
     date: z.date().optional(),
     images: z.array(z.string()).optional(),
     button: z
