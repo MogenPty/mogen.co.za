@@ -12,7 +12,7 @@ content:
       - { name: author, label: Author, type: string }
       - { name: date, label: Pub Date, type: date }
       - { name: title, label: Title, type: string, required: true }
-      - { name: image, label: Image, type: string }
+      - { name: image, label: Image, type: image }
       - { name: slug, label: Slug, type: string }
       - { name: featured, label: Featured, type: boolean }
       - { name: draft, label: Draft, type: boolean }
